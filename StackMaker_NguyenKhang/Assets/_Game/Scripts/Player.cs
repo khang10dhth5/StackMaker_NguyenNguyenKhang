@@ -7,12 +7,13 @@ public class Player :Singleton<Player>
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private Transform model;
-    [SerializeField] private GameObject block;
+    [SerializeField] private GameObject brickPrefab;
 
     private Vector3 startPosition, endPosition;
     private Vector3 lastPositon;
     private Vector3 currentBlockPos;
-    private Stack listBlock=new Stack();
+    private Stack listBrick=new Stack();
+    
     private void Start()
     {
         OnInit();
@@ -32,7 +33,7 @@ public class Player :Singleton<Player>
             CheckSwipe();
         }
 
-        if (Vector3.Distance(transform.position,lastPositon)>0.1f)
+        if (Vector3.Distance(transform.position,lastPositon)>0.1f && GameManager.Ins.gameState==GameState.PlayGame)
         {
             transform.position = Vector3.MoveTowards(transform.position, lastPositon, moveSpeed * Time.deltaTime);
         }
@@ -40,17 +41,17 @@ public class Player :Singleton<Player>
 
     public void AddBlock()
     {
-        GameObject b = Instantiate(block, new Vector3(model.position.x, currentBlockPos.y, model.position.z), Quaternion.identity);
-        b.transform.SetParent(model);
+        GameObject brick = Instantiate(brickPrefab, new Vector3(model.position.x, currentBlockPos.y, model.position.z), Quaternion.identity);
+        brick.transform.SetParent(model);
         model.position = model.position + new Vector3(0,0.31f, 0);
-        listBlock.Push(b);
+        listBrick.Push(brick);
     }
     public void RemoveBlock()
     {
-        if(listBlock.Count>0)
+        if(listBrick.Count>0)
         {
-            GameObject block= listBlock.Pop() as GameObject;
-            Destroy(block);
+            GameObject brick= listBrick.Pop() as GameObject;
+            Destroy(brick);
             model.position = model.position - new Vector3(0, 0.3f, 0);
         }
         

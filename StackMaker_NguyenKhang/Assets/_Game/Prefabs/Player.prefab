@@ -8902,7 +8902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   model: {fileID: 6970013828829752750}
-  block: {fileID: 5937647724959232925, guid: 3eb47a30de727bd4da214e16a3786472, type: 3}
+  brickPrefab: {fileID: 5937647724959232925, guid: 3eb47a30de727bd4da214e16a3786472, type: 3}
 --- !u!1 &7177478345863079735
 GameObject:
   m_ObjectHideFlags: 0

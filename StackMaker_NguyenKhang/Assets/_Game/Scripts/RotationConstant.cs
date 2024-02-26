@@ -20,6 +20,11 @@ public class RaycastConstant
     public static Vector3 DOWN_RAYCAST = new Vector3(0, 0, -1);
 
 }
+
+public class PathConstant
+{
+    public const string MAP_PATH = "Map/Map_";
+}
 public enum GameTag
 {
     Brick,
