@@ -43,7 +43,7 @@ public class Player :Singleton<Player>
     {
         GameObject brick = Instantiate(brickPrefab, new Vector3(model.position.x, currentBlockPos.y, model.position.z), Quaternion.identity);
         brick.transform.SetParent(model);
-        model.position = model.position + new Vector3(0,0.31f, 0);
+        model.position = model.position + new Vector3(0,0.4f, 0);
         listBrick.Push(brick);
     }
     public void RemoveBlock()
@@ -52,7 +52,7 @@ public class Player :Singleton<Player>
         {
             GameObject brick= listBrick.Pop() as GameObject;
             Destroy(brick);
-            model.position = model.position - new Vector3(0, 0.3f, 0);
+            model.position = model.position - new Vector3(0, 0.4f, 0);
         }
         
     }
@@ -60,7 +60,7 @@ public class Player :Singleton<Player>
     private void OnInit()
     {
         lastPositon = transform.position;
-        currentBlockPos.y = model.position.y-0.4f;
+        currentBlockPos.y = model.position.y-1f;
     }
 
 
@@ -112,7 +112,6 @@ public class Player :Singleton<Player>
             lastPositon = lastPositon + dirRayCast;
             if(GameManager.Ins.gameState==GameState.StartGame)
             {
-                AddBlock();
                 GameManager.Ins.gameState = GameState.PlayGame;
             }
         }

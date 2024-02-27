@@ -4780,7 +4780,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 8410995530245525230}
-  collider: {fileID: 4229356155654511141}
 --- !u!1 &809906390323818046
 GameObject:
   m_ObjectHideFlags: 0
@@ -13379,7 +13378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 7356326833546175513}
-  collider: {fileID: 2890896012991885522}
 --- !u!1 &1821081304836440562
 GameObject:
   m_ObjectHideFlags: 0
@@ -18437,7 +18435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 6738019371273334515}
-  collider: {fileID: 1407984252703373880}
 --- !u!1 &2548374382916638927
 GameObject:
   m_ObjectHideFlags: 0
@@ -30657,7 +30654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 5111827548206404428}
-  collider: {fileID: 646467545329485703}
 --- !u!1 &4075960457844655924
 GameObject:
   m_ObjectHideFlags: 0
@@ -33916,37 +33912,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5061576594359479310
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2999112492834995181}
-  m_Layer: 0
-  m_Name: startPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2999112492834995181
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5061576594359479310}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 3.38, z: 2.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2706174239325828619}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5076440286264255934
 GameObject:
   m_ObjectHideFlags: 0
@@ -34500,7 +34465,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 3946148364936912884}
-  collider: {fileID: 8704301235211422527}
 --- !u!1 &5202735787376652429
 GameObject:
   m_ObjectHideFlags: 0
@@ -41754,7 +41718,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 3567989259451134317}
-  collider: {fileID: 9190828207274108326}
 --- !u!1 &5724525504932671172
 GameObject:
   m_ObjectHideFlags: 0
@@ -51699,7 +51662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 2217241284541860004}
-  collider: {fileID: 5822402181633547375}
 --- !u!1 &6927503346147216671
 GameObject:
   m_ObjectHideFlags: 0
@@ -53257,7 +53219,6 @@ Transform:
   - {fileID: 6738797434769490031}
   - {fileID: 4902734733007510922}
   - {fileID: 4824661671944106401}
-  - {fileID: 2999112492834995181}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8316017393940937285
@@ -53273,7 +53234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 7309879764834470261, guid: 232c59074e6ba014db0f37931c1a0ba7, type: 3}
-  startPoint: {fileID: 2999112492834995181}
+  startPoint: {fileID: 1272488057276854606}
 --- !u!1 &7317221171147017639
 GameObject:
   m_ObjectHideFlags: 0
@@ -54063,7 +54024,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 1821081304836440562}
-  collider: {fileID: 6290874541894358329}
 --- !u!1 &7492694219212431551
 GameObject:
   m_ObjectHideFlags: 0
@@ -55588,7 +55548,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 1343619719569283540}
-  collider: {fileID: 6678017843271552287}
 --- !u!1 &7857769025424383106
 GameObject:
   m_ObjectHideFlags: 0
@@ -55723,7 +55682,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 1416824284834746216}
-  collider: {fileID: 6746947438456609699}
 --- !u!1 &7891398884893423759
 GameObject:
   m_ObjectHideFlags: 0
@@ -62050,7 +62008,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 899130047494913232}
-  collider: {fileID: 4787943089427228699}
 --- !u!1 &8262187117505616214
 GameObject:
   m_ObjectHideFlags: 0

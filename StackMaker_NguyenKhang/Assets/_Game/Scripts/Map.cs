@@ -9,7 +9,7 @@ public class Map : MonoBehaviour
 
     private void Start()
     {
-        Player player = Instantiate(playerPrefab, startPoint.position, Quaternion.identity);
+        Player player = Instantiate(playerPrefab, startPoint.position+Vector3.up, Quaternion.identity);
         CameraFollow.Ins.target = player.transform;
         UIManager.Ins.pnlLevel.SetActive(false);
     }

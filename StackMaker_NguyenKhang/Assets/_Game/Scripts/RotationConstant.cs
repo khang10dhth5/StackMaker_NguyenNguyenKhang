@@ -39,4 +39,6 @@ public enum BrickState
 {
     New,
     Collected,
+    Act,
+    DeAct,
 }
