@@ -13,7 +13,7 @@ public class BrickAct : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (GameManager.Ins.gameState == GameState.PlayGame && collision.transform.tag == GameTag.Player.ToString() && brickState==BrickState.New )
+        if (collision.transform.tag == GameTag.Player.ToString() && brickState==BrickState.New )
         {
             block.SetActive(false);
             brickState = BrickState.Collected;
