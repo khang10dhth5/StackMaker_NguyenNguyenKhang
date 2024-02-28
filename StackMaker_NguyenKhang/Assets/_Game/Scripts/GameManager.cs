@@ -9,4 +9,8 @@ public class GameManager : Singleton<GameManager>
     {
         gameState = GameState.StartGame;
     }
+    public void EndGame()
+    {
+        gameState = GameState.EndGame;
+    }
 }

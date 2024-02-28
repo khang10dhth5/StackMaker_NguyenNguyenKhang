@@ -736,8 +736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pnlLevel: {fileID: 771069143}
-  btnPlay: {fileID: 1717081146}
   pnlMainMenu: {fileID: 2059035057}
+  btnPlay: {fileID: 1717081146}
 --- !u!1 &653588115
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +817,7 @@ GameObject:
   - component: {fileID: 771069144}
   - component: {fileID: 771069146}
   - component: {fileID: 771069145}
+  - component: {fileID: 771069147}
   m_Layer: 5
   m_Name: PanelLevel
   m_TagString: Untagged
@@ -883,6 +884,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771069143}
   m_CullTransparentMesh: 1
+--- !u!114 &771069147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771069143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32913bf696c8aa42a33100421e7e3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridLayoutGroup: {fileID: 1057975308}
+  levelItemUIPrefab: {fileID: 3987803695569807926, guid: 2dbaf50b95960c34089660e2a438589b, type: 3}
+  btnBackMainMenu: {fileID: 1126094636}
+  levelSO: {fileID: 11400000, guid: d5c9e0b5aa30df64eac8f6e3c6205de7, type: 2}
 --- !u!1 &949340265
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +956,6 @@ GameObject:
   - component: {fileID: 1057975308}
   - component: {fileID: 1057975310}
   - component: {fileID: 1057975309}
-  - component: {fileID: 1057975311}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1004,21 +1020,6 @@ MonoBehaviour:
   m_Spacing: {x: 60, y: 30}
   m_Constraint: 1
   m_ConstraintCount: 3
---- !u!114 &1057975311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057975307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32913bf696c8aa42a33100421e7e3c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLayoutGroup: {fileID: 1057975308}
-  levelItemUIPrefab: {fileID: 3987803695569807926, guid: 2dbaf50b95960c34089660e2a438589b, type: 3}
-  levelSO: {fileID: 11400000, guid: d5c9e0b5aa30df64eac8f6e3c6205de7, type: 2}
 --- !u!1 &1104771107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,7 +1591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1057975308}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1

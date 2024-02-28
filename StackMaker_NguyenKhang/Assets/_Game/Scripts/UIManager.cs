@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class UIManager : Singleton<UIManager>
 {
     public GameObject pnlLevel;
+    public GameObject pnlMainMenu;
 
     [SerializeField] private Button btnPlay;
-    [SerializeField] private GameObject pnlMainMenu;
     
     private void Start()
     {

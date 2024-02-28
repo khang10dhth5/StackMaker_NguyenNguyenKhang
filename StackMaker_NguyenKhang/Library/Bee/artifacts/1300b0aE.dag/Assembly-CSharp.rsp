@@ -359,6 +359,7 @@
 "Assets/_Game/Scripts/Brick/BrickAct.cs"
 "Assets/_Game/Scripts/Brick/BrickDeAct.cs"
 "Assets/_Game/Scripts/CameraFollow.cs"
+"Assets/_Game/Scripts/FisnishPoint.cs"
 "Assets/_Game/Scripts/GameManager.cs"
 "Assets/_Game/Scripts/Level/LevelItemUI.cs"
 "Assets/_Game/Scripts/Level/LevelManager.cs"

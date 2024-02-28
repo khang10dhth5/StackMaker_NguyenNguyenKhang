@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class Player :Singleton<Player>
 {
+    public Stack listBrick = new Stack();
+    public Vector3 lastPositon;
+
     [SerializeField] private float moveSpeed;
     [SerializeField] private Transform model;
     [SerializeField] private GameObject brickPrefab;
-
+    [SerializeField] private Animator amin;
     private Vector3 startPosition, endPosition;
-    private Vector3 lastPositon;
     private Vector3 currentBlockPos;
-    private Stack listBrick=new Stack();
-    
+    private bool isMove;
+    private float SWIPE_THRESHOLD = 0.3f;
+
     private void Start()
     {
         OnInit();
@@ -35,18 +38,42 @@ public class Player :Singleton<Player>
 
         if (Vector3.Distance(transform.position,lastPositon)>0.1f && GameManager.Ins.gameState==GameState.PlayGame)
         {
+            isMove = true;
             transform.position = Vector3.MoveTowards(transform.position, lastPositon, moveSpeed * Time.deltaTime);
         }
+        if(Vector3.Distance(transform.position, lastPositon) < 0.1f)
+        {
+            isMove = false;
+            amin.SetInteger(AminConstant.KEY_ADDBRICK, 0);
+        }
     }
-
-    public void AddBlock()
+    public void EndGame()
+    {
+        //amin.SetInteger("renwu", 2);
+        amin.SetInteger(AminConstant.KEY_WIN, 2);
+    }
+    public void ClearBrick()
+    {
+        DesTroyListBrick();
+        model.position = new Vector3(model.position.x,currentBlockPos.y+0.5f,model.position.z);
+    }
+    public void DesTroyListBrick()
+    {
+        foreach(GameObject brick in listBrick)
+        {
+            Destroy(brick);
+        }
+        listBrick.Clear();
+    }
+    public void AddBrick()
     {
         GameObject brick = Instantiate(brickPrefab, new Vector3(model.position.x, currentBlockPos.y, model.position.z), Quaternion.identity);
         brick.transform.SetParent(model);
         model.position = model.position + new Vector3(0,0.4f, 0);
         listBrick.Push(brick);
+        
     }
-    public void RemoveBlock()
+    public void RemoveBrick()
     {
         if(listBrick.Count>0)
         {
@@ -61,41 +88,45 @@ public class Player :Singleton<Player>
     {
         lastPositon = transform.position;
         currentBlockPos.y = model.position.y-1f;
+        isMove = false;
     }
 
 
     private void CheckSwipe()
     {
-        if(VerticalMove()>HorizontalMove() )
+        if (!isMove)
         {
-            if(startPosition.y-endPosition.y<0)
+            if (VerticalMove() > SWIPE_THRESHOLD && VerticalMove() > HorizontalMove())
             {
-                Debug.Log("Up");
-                OnSwipeUp();
-            }
-            else if (startPosition.y - endPosition.y > 0)
-            {
-                Debug.Log("Down");
-                OnSwipeDown();
-            }
-           
-        }
-        else if(HorizontalMove()>VerticalMove() )
-        {
+                if (startPosition.y - endPosition.y < 0)
+                {
+                    Debug.Log("Up");
+                    OnSwipeUp();
+                }
+                else if (startPosition.y - endPosition.y > 0)
+                {
+                    Debug.Log("Down");
+                    OnSwipeDown();
+                }
 
-            if (startPosition.x - endPosition.x < 0)
-            {
-                Debug.Log("Right");
-                OnSwipeRight();
             }
-            else if (startPosition.x- endPosition.x > 0)
+            else if (HorizontalMove() > SWIPE_THRESHOLD && HorizontalMove() > VerticalMove())
             {
-                Debug.Log("Left");
-                OnSwipeLeft();
+
+                if (startPosition.x - endPosition.x < 0)
+                {
+                    Debug.Log("Right");
+                    OnSwipeRight();
+                }
+                else if (startPosition.x - endPosition.x > 0)
+                {
+                    Debug.Log("Left");
+                    OnSwipeLeft();
+                }
             }
+            startPosition = endPosition;
+            amin.SetInteger(AminConstant.KEY_ADDBRICK, 1);
         }
-        startPosition = endPosition;
-        
         
     }
     private void CheckEndPoint(Vector3 dirRayCast)
@@ -107,6 +138,10 @@ public class Player :Singleton<Player>
             Debug.DrawRay(lastPositon + dirRayCast, Vector3.down, Color.blue, 5f);
             if (hit.transform==null||hit.transform.tag != GameTag.Brick.ToString())
             {
+                if(hit.transform!=null)
+                {
+                    Debug.LogError(hit.transform.tag);
+                }
                 return;
             }
             lastPositon = lastPositon + dirRayCast;

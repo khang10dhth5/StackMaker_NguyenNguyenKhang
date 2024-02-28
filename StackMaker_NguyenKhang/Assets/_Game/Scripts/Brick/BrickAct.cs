@@ -17,7 +17,7 @@ public class BrickAct : MonoBehaviour
         {
             block.SetActive(false);
             brickState = BrickState.Collected;
-            Player.Ins.AddBlock();
+            Player.Ins.AddBrick();
 
         }
 

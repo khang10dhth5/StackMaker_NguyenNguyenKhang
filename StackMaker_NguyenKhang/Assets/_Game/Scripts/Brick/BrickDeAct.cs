@@ -15,9 +15,12 @@ public class BrickDeAct : MonoBehaviour
     {
         if (collision.transform.tag == GameTag.Player.ToString()  && brickState==BrickState.DeAct)
         {
-            block.SetActive(true);
-            Player.Ins.RemoveBlock();
-            brickState = BrickState.Act;
+            if(Player.Ins.listBrick.Count>0)
+            {
+                block.SetActive(true);
+                Player.Ins.RemoveBrick();
+                brickState = BrickState.Act;
+            }
         }
 
     }

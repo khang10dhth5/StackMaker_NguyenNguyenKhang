@@ -30,10 +30,17 @@ public enum GameTag
     Brick,
     Player
 }
+
+public class AminConstant
+{
+    public const string KEY_ADDBRICK = "addBrick";
+    public const string KEY_WIN = "win";
+}
 public enum GameState
 {
     StartGame,
-    PlayGame
+    PlayGame,
+    EndGame,
 }
 public enum BrickState
 {

@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] private Transform gridLayoutGroup;
     [SerializeField] private LevelItemUI levelItemUIPrefab;
+    [SerializeField] private Button btnBackMainMenu;
     [SerializeField] private LevelSO levelSO;
 
     private Map currentMap;
@@ -19,7 +21,19 @@ public class LevelManager : Singleton<LevelManager>
             levelItemUI.SetLevelItemUI(levelSO.listLevelItem[i], OnLevelItemUIClickHandle);
         }
     }
+    private void Start()
+    {
+        OnInit();
+    }
 
+    private void OnInit()
+    {
+        btnBackMainMenu.onClick.AddListener(()=> {
+            UIManager.Ins.pnlLevel.SetActive(false);
+            UIManager.Ins.pnlMainMenu.SetActive(true);
+
+        });
+    }
     public void DestroyCurrentMap()
     {
         Destroy(currentMap);
@@ -35,7 +49,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         foreach (Transform child in gridLayoutGroup)
         {
-            GameObject.Destroy(child.gameObject);
+            Destroy(child.gameObject);
         }
     }
 }
