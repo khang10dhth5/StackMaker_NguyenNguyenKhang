@@ -13,7 +13,7 @@ public class BrickDeAct : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == GameTag.Player.ToString()  && brickState==BrickState.DeAct)
+        if (collision.transform.CompareTag(GameTag.Player.ToString()) && brickState==BrickState.DeAct)
         {
             if(Player.Ins.listBrick.Count>0)
             {

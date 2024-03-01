@@ -21,7 +21,7 @@ public class FisnishPoint : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag==GameTag.Player.ToString())
+        if(other.transform.CompareTag(GameTag.Player.ToString()))
         {
             Player.Ins.ClearBrick();
             leftFirework.Play();
@@ -36,5 +36,6 @@ public class FisnishPoint : MonoBehaviour
     private void EndGame()
     {
         GameManager.Ins.EndGame();
+        UIManager.Ins.pnlReward.SetActive(true);
     }
 }

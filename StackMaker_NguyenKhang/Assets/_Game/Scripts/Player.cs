@@ -49,7 +49,6 @@ public class Player :Singleton<Player>
     }
     public void EndGame()
     {
-        //amin.SetInteger("renwu", 2);
         amin.SetInteger(AminConstant.KEY_WIN, 2);
     }
     public void ClearBrick()
@@ -135,9 +134,13 @@ public class Player :Singleton<Player>
        while(true)
         {
             Physics.Raycast(lastPositon + dirRayCast+Vector3.up, Vector3.down, out RaycastHit hit, 10f);
-            Debug.DrawRay(lastPositon + dirRayCast, Vector3.down, Color.blue, 5f);
+            //Debug.DrawRay(lastPositon + dirRayCast, Vector3.down, Color.blue, 5f);
             if (hit.transform==null||hit.transform.tag != GameTag.Brick.ToString())
-            {
+            {   
+                if(hit.transform==null)
+                {
+                    Debug.Log("null");
+                }
                 if(hit.transform!=null)
                 {
                     Debug.LogError(hit.transform.tag);

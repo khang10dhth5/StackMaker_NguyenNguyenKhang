@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow :Singleton<CameraFollow>
 {
-    public Transform target;
+    [HideInInspector] public Transform target;
     public Vector3 offset;
     public float moveSpeed=10;
     // Update is called once per frame
