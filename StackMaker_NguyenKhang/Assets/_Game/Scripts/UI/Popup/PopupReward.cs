@@ -29,7 +29,7 @@ public class PopupReward : MonoBehaviour
         });
         btnRetry.onClick.AddListener(() =>
         {
-            UIManager.Ins.RetryGame();
+            GameManager.Ins.RetryGame();
             gameObject.SetActive(false);
         });
     }

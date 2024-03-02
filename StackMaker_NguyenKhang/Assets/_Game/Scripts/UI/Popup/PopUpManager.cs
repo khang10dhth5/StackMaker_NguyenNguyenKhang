@@ -18,7 +18,7 @@ public class PopUpManager : Singleton<PopUpManager>
 
     public void ShowPopUpReward()
     {
-        pnlReward.setTextReward(listReward[UIManager.Ins.indexCurrentMap-1].ToString());
+        pnlReward.setTextReward(listReward[GameManager.Ins.indexCurrentMap-1].ToString());
         pnlReward.gameObject.SetActive(true);
     }
     private void OnInit()
@@ -29,6 +29,6 @@ public class PopUpManager : Singleton<PopUpManager>
 
     private void OnNextLevel()
     {
-        UIManager.Ins.NextLevel();
+        GameManager.Ins.NextLevel();
     }
 }

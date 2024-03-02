@@ -28,7 +28,7 @@ public class PopupPauseGame : MonoBehaviour
         });
         btnRetry.onClick.AddListener(() => {
             ClosePanelPauseGame();
-            UIManager.Ins.RetryGame();
+            GameManager.Ins.RetryGame();
         });
         btnQuit.onClick.AddListener(() => {
             ClosePanelPauseGame();
@@ -39,7 +39,7 @@ public class PopupPauseGame : MonoBehaviour
 
     private void QuitGame()
     {
-        UIManager.Ins.DestroyCurrentMap();
+        GameManager.Ins.DestroyCurrentMap();
         UIManager.Ins.pnlLevel.SetActive(true);
         HeaderUIManager.Ins.btnPauseGame.gameObject.SetActive(false);
     }

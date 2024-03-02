@@ -37,6 +37,6 @@ public class FisnishPoint : MonoBehaviour
     {
         GameManager.Ins.EndGame();
         PopUpManager.Ins.ShowPopUpReward();
-        UIManager.Ins.SaveCoin(PopUpManager.Ins.listReward[UIManager.Ins.indexCurrentMap - 1]);
+        GameManager.Ins.SaveCoin(PopUpManager.Ins.listReward[GameManager.Ins.indexCurrentMap - 1]);
     }
 }

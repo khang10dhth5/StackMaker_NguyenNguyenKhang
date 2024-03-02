@@ -29,7 +29,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private void OnInit()
     {
-        UIManager.Ins.countLevel = levelSO.listLevelItem.Count;
+        GameManager.Ins.countLevel = levelSO.listLevelItem.Count;
         btnBackMainMenu.onClick.AddListener(()=> {
             UIManager.Ins.pnlLevel.SetActive(false);
             UIManager.Ins.pnlMainMenu.SetActive(true);
@@ -41,8 +41,8 @@ public class LevelManager : Singleton<LevelManager>
     private void OnLevelItemUIClickHandle(int index,int reward)
     {
         HeaderUIManager.Ins.btnPauseGame.gameObject.SetActive(true);
-        UIManager.Ins.indexCurrentMap = index;
-        UIManager.Ins.SpawnMap(UIManager.Ins.indexCurrentMap);
+        GameManager.Ins.indexCurrentMap = index;
+        GameManager.Ins.SpawnMap(GameManager.Ins.indexCurrentMap);
     }
   
 

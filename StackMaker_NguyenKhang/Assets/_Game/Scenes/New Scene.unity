@@ -831,6 +831,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnCloseSetting: {fileID: 1327549379}
+  btnSound: {fileID: 1712266267}
+  sound: {fileID: 21300000, guid: 48887b7fdbfecef49b8cf6e1799d9a9f, type: 3}
+  unsound: {fileID: 21300000, guid: b706569e28f56b14abd612e532dd9a72, type: 3}
 --- !u!1 &350049426
 GameObject:
   m_ObjectHideFlags: 0
