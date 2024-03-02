@@ -25,6 +25,10 @@ public class PathConstant
 {
     public const string MAP_PATH = "Map/Map_";
 }
+public class KeyConstant
+{
+    public const string KEY_COIN = "coin";
+}
 public enum GameTag
 {
     Brick,
